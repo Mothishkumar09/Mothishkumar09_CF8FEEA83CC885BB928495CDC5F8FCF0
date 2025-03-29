@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #4A90E2, #5C258D);
+    color: white;
+    text-align: center;
+    padding: 40px;
+}
+
+.container {
+    width: 60%;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input {
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    width: 80%;
+    margin: auto;
+}
+/* Move Back Button to Top Left */
+.back-btn {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    background-color: #ff5c5c;
+    color: white;
+    padding: 15px 19px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+/* Save Profile Button */
+.save-btn {
+    display: block;
+    width: 180px;  /* Adjusted width */
+    height: 45px;  /* Adjusted height */
+    margin: 20px auto;  /* Centered */
+    background-color: #ff5c5c;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.save-btn:hover {
+    background-color: #e04343;
+    transform: scale(1.05);
+}
+
+.save-btn:active {
+    background-color: #c13232;
+    transform: scale(0.98);
+}
+
+.save-btn:active {
+    background-color: #c13232;
+    transform: scale(0.98);  /* Slightly shrink on click */
+}
+
+/* Resize Input Fields */
+input[type="text"] {
+    width: 40%;  /* Adjust width for average size */
+    height: 50px;  /* Adjust height for a cleaner look */
+    font-size: 16px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-color: #7a42f4;
+    box-shadow: 0 0 5px rgba(122, 66, 244, 0.5);
+}
+
+.pet-profile-display {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.pet-profile-display img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid white;
+}

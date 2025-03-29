@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/user_profile.css') }}">
+    <script src="{{ url_for('static', filename='js/user_profile.js') }}" defer></script>
+
+</head>
+<body>
+    <!-- Back Button to Settings -->
+    <button class="back-btn" onclick="window.location.href='{{ url_for('settings') }}'">⬅ Back to Settings</button> 
+
+    <div class="profile-container">
+        <h2>👤 User Profile</h2>
+        <form id="userProfileForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name">
+        
+            <label for="email">Email ID:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email">
+        
+            <label for="mobile">Mobile Number:</label>
+            <input type="text" id="mobile" name="mobile" placeholder="Enter your mobile number">
+        
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob">
+        
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Choose a username">
+        
+            <button type="submit" class="save-btn">Save</button>
+        </form>
+        
+    </div>
+</body>
+</html>

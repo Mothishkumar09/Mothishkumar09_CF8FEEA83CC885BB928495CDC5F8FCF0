@@ -1,0 +1,58 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Full-Screen Background */
+body {
+    background: #A8E6CF; /* Pastel Green */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Centered Logo Content */
+.logo-container {
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Logo Image */
+.logo-image {
+    width: 200px;
+    height: auto;
+    animation: bounce 1.5s infinite alternate;
+}
+
+/* Brand Name */
+.brand-name {
+    font-size: 50px;
+    font-weight: 700;
+    color: #2C3E50;
+    margin-top: 10px;
+}
+
+/* Tagline */
+.tagline {
+    font-size: 18px;
+    font-weight: 500;
+    color: #34495E;
+    margin-top: 5px;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+}

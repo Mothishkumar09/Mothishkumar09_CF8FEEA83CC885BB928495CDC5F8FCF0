@@ -1,0 +1,7 @@
+{
+    "gps_tracking": true,
+    "temperature_monitoring": true,
+    "activity_tracking": true,
+    "heart_rate_monitoring": true,
+    "notifications": true
+}

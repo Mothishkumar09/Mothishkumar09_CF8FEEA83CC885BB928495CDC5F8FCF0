@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Settings</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/device_settings.css') }}">
+</head>
+<body>
+
+    <div class="settings-container">
+        <button class="back-btn" onclick="window.location.href='{{ url_for('settings') }}'">← Back to Settings</button>
+
+        <h2 class="settings-title">Device Settings</h2>
+
+        <div class="settings-section">
+            <h3>Device Preferences</h3>
+
+            <div class="setting-item">
+                <span>Enable GPS Tracking</span>
+                <label class="switch">
+                    <input type="checkbox" id="gpsToggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="setting-item">
+                <span>Heart Rate Monitoring</span>
+                <label class="switch">
+                    <input type="checkbox" id="heartRateToggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="setting-item">
+                <span>Temperature Alerts</span>
+                <label class="switch">
+                    <input type="checkbox" id="tempToggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="setting-item">
+                <span>Step Counter</span>
+                <label class="switch">
+                    <input type="checkbox" id="stepToggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="settings-section">
+            <h3>Device Connectivity</h3>
+
+            <div class="setting-item">
+                <span>Bluetooth</span>
+                <label class="switch">
+                    <input type="checkbox" id="bluetoothToggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="setting-item">
+                <span>WiFi Auto-Connect</span>
+                <label class="switch">
+                    <input type="checkbox" id="wifiToggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <button class="save-btn">Save Settings</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/device_settings.js') }}"></script>
+
+</body>
+</html>

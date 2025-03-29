@@ -1,0 +1,106 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1E90FF, #87CEFA);
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 60px auto; /* More space from the top */
+    padding: 25px;
+}
+
+h1 {
+    font-size: 34px;
+    margin-bottom: 25px;
+}
+
+/* Back Button */
+.back-btn {
+    background: #fff;
+    color: #1E90FF;
+    border: none;
+    padding: 14px 22px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-bottom: 40px; /* More space below button */
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: #e0e0e0;
+}
+
+/* Temperature Gauge */
+.gauge {
+    width: 220px;
+    height: 220px;
+    margin: 30px auto; /* More space */
+    position: relative;
+}
+
+.gauge-fill {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(#ff4747 0% 50%, #ffcc00 50% 75%, #4caf50 75% 100%);
+    position: absolute;
+}
+
+.gauge-cover {
+    width: 75%;
+    height: 75%;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 12.5%;
+    left: 12.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: black;
+}
+
+/* Status */
+.status {
+    font-size: 24px;
+    margin-top: 30px; /* More space from gauge */
+    margin-bottom: 15px;
+}
+
+/* Checkboxes */
+.status-checkbox {
+    margin-left: 8px; /* More spacing from text */
+    width: 22px;
+    height: 22px;
+}
+
+/* Chart */
+canvas {
+    width: 100% !important;
+    height: 380px !important;
+    margin-top: 50px; /* More space from elements */
+}
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #f82f2f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.back-btn:hover {
+    background-color: #8c0202;
+}

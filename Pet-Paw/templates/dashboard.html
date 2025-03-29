@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetPaw - Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}" defer></script>
+    <script src="https://kit.fontawesome.com/YOUR-FONT-AWESOME-KIT.js" crossorigin="anonymous"></script>
+</head>
+<body>
+ 
+    <script>
+        document.querySelector(".back-btn").addEventListener("click", () => {
+            window.location.href = "{{ url_for('home') }}";  // ✅ Add ';'
+        });
+    </script>
+    
+    <button class="back-btn" onclick="window.location.href='{{ url_for('home') }}'">
+        ⬅ Back to Home
+    </button>
+           
+    <!-- Dashboard Content -->
+    <div class="content">
+        <h2>🐶 Pet Health Metrics</h2>
+        <div class="metrics-buttons">
+            <button onclick="window.location.href='/gps'">GPS Tracking</button>
+            <button onclick="window.location.href='/heart-rate'">Heart Rate</button>
+            <button onclick="window.location.href='/temperature'">Temperature</button>
+            <button onclick="window.location.href='/activity'">Activity</button>
+            
+        </div>
+    </div>
+
+</body>
+</html>

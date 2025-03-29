@@ -1,0 +1,74 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    text-align: center;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-top: 80px;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+.heart-card {
+    background: white;
+    color: black;
+    border-radius: 12px;
+    padding: 20px;
+    width: 250px;
+    margin: 20px auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.heart-circle {
+    width: 120px;
+    height: 120px;
+    background: #ff5252;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 10px auto;
+    box-shadow: 0px 5px 15px rgba(255, 82, 82, 0.4);
+}
+
+.status {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: white;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.back-button:hover {
+    background: black;
+    color: white;
+}
+
+canvas {
+    max-width: 90%;
+    background: white;
+    padding: 10px;
+    border-radius: 12px;
+    margin-top: 20px;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Monitoring</title>
+    <script src="https://cdn.jsdelivr.net/npm/activity.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/activity.css') }}">
+    
+</head>
+<body>
+    
+    <button class="back-btn" onclick="window.location.href='{{ url_for('dashboard') }}'">
+        ⬅ Back to Dashboard
+    </button>
+    
+        <h1 class="title">🏃 Activity Monitoring</h1>
+
+        <div class="activity-box">
+            <h2>👟 Steps Count</h2>
+            <p id="steps-count">0</p>
+        </div>
+
+        <div class="status-box">
+            <h2>🔋 Activity Status</h2>
+            <p id="activity-status">Idle</p>
+        </div>
+
+        <canvas id="activityChart"></canvas>
+    </div>
+
+    <script>
+        function goToDashboard() {
+            window.location.href = "/dashboard"; // Change to your actual dashboard route
+        }
+
+        // Simulated Activity Data
+        function updateActivity() {
+            let steps = Math.floor(Math.random() * 10000);
+            document.getElementById("steps-count").innerText = steps + " Steps";
+
+            let status = steps > 5000 ? "Active 🏃‍♂️" : "Idle 💤";
+            document.getElementById("activity-status").innerText = status;
+        }
+
+        // Chart.js for Activity Trends
+        let ctx = document.getElementById('activityChart').getContext('2d');
+        let activityChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ["1 min", "2 min", "3 min", "4 min", "5 min"],
+                datasets: [{
+                    label: 'Steps Count',
+                    data: [1000, 3000, 5000, 7000, 9000],
+                    borderColor: 'cyan',
+                    borderWidth: 2,
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+
+        setInterval(updateActivity, 3000); // Update every 3 seconds
+    </script>
+
+</body>
+</html>

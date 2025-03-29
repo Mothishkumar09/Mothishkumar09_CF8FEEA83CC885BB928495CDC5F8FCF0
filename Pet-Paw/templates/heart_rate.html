@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Rate Monitoring</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/heart.css') }}">
+    <script src="{{ url_for('static', filename='heart.js') }}" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/heart.js/3.7.1/chart.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+   
+    <button onclick="window.location.href='/dashboard'" class="back-button">
+        <i class="fas fa-arrow-left"></i> Back to Dashboard
+    </button>
+
+    <div class="container">
+        <h1><i class="fas fa-heartbeat"></i> Heart Rate Monitoring</h1>
+
+        <div class="heart-card">
+            <div class="heart-circle">
+                <span id="heart-rate">78</span> <!-- Live Heart Rate -->
+                <small>bpm</small>
+            </div>
+            <p class="status">Status: <span id="status">Normal</span> ✅</p>
+        </div>
+
+        <canvas id="heartChart"></canvas> <!-- Live Heart Rate Graph -->
+    </div>
+
+</body>
+</html>

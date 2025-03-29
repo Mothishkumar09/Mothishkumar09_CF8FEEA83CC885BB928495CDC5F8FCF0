@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/feedback.css') }}">
+</head>
+<body>
+    <a href="{{ url_for('settings') }}" class="back-button">Back to Settings</a>
+
+    <div class="feedback-container">
+        <h1>Share Your Feedback</h1>
+        <p>Your opinion matters! Let us know your experience.</p>
+
+        <form id="feedbackForm">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="rating">Rate Your Experience</label>
+            <div class="rating">
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+            </div>
+
+            <label for="message">Your Feedback</label>
+            <textarea id="message" rows="4" placeholder="Write your feedback here..." required></textarea>
+
+            <button type="submit" class="submit-btn">Submit Feedback</button>
+        </form>
+
+        <div id="toast" class="toast-message">Feedback submitted successfully! ✅</div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/feedback.js') }}"></script>
+</body>
+</html>

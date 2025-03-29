@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPS Tracking</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/map.css') }}">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+
+<body>
+
+    <div class="gps-container">
+        <header>
+            <h1>📍 GPS Tracking</h1>
+            <button onclick="window.location.href='/dashboard'" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Dashboard
+            </button>
+        </header>
+
+        <div id="map"></div>
+
+        <div class="info-card">
+            <h2>Live Pet Location</h2>
+            <p><strong>Latitude:</strong> <span id="lat">--</span></p>
+            <p><strong>Longitude:</strong> <span id="lng">--</span></p>
+            <p><strong>Status:</strong> Tracking Enabled ✅</p>
+        </div>
+    </div>
+
+    <script>
+        var map = L.map('map').setView([12.9716, 77.5946], 15); // Default location
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        var marker = L.marker([12.9716, 77.5946]).addTo(map);
+
+        function updateLocation(lat, lng) {
+            document.getElementById('lat').textContent = lat;
+            document.getElementById('lng').textContent = lng;
+            marker.setLatLng([lat, lng]);
+            map.setView([lat, lng], 15);
+        }
+    
+        // Simulated pet movement (Replace this with actual GPS data from IoT)
+        setInterval(() => {
+            let newLat = 12.9716 + (Math.random() - 0.5) * 0.01;
+            let newLng = 77.5946 + (Math.random() - 0.5) * 0.01;
+            updateLocation(newLat, newLng);
+        }, 3000);
+    </script>
+
+</body>
+</html>

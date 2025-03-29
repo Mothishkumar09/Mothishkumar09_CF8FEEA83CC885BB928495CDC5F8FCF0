@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetPaw - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <script src="{{ url_for('static', filename='js/home.js') }}" defer></script>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <button class="close-btn" onclick="toggleSidebar()">☰</button>
+        <ul>
+            <li><a href="{{ url_for('home') }}" class="active">Home</a></li>
+            <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+            <li><a href="{{ url_for('pet_profile') }}">Pet Profile</a></li>
+            <li><a href="{{ url_for('settings') }}">Settings</a></li>
+            <li class="logout"><a href="{{ url_for('logout') }}">Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="topbar">
+        <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+        <h1>PetPaw Dashboard</h1>
+    </div>
+
+    <!-- Home Content -->
+    <div class="content">
+
+        <!-- Pet Profile Display -->
+        <div class="pet-profile">
+            <img id="petAvatar" src="{{ pet_avatar }}" alt="Pet Avatar">
+            <h2 id="petName">{{ pet_name }}</h2>
+        </div>
+
+        <!-- Live Metrics -->
+        <div class="metrics">
+            <div class="card gps">
+                <h3>📍 GPS Tracking</h3>
+                <p>Live Location: <span id="gps-location">Updating...</span></p>
+            </div>
+            <div class="card heart-rate">
+                <h3>❤️ Heart Rate</h3>
+                <p><span id="heart-rate">--</span> bpm</p>
+            </div>
+            <div class="card temperature">
+                <h3>🌡 Temperature</h3>
+                <p><span id="temperature">--</span>°C</p>
+            </div>
+            <div class="card activity">
+                <h3>🏃 Daily Activity</h3>
+                <p>Steps: <span id="steps-count">--</span></p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

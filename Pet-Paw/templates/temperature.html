@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Monitoring</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/temperature.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🌡️ Temperature Monitoring</h1>
+        <button onclick="goBack()" class="back-btn">← Back to Dashboard</button>
+        
+        <!-- Animated Temperature Gauge -->
+        <div class="gauge">
+            <div class="gauge-fill"></div>
+            <div class="gauge-cover">--°C</div>
+        </div>
+
+        <!-- Temperature Status -->
+        <div class="status">
+            <p>Status: <span id="temp-status">Loading...</span> ✅</p>
+        </div>
+
+        <!-- Temperature Alert Toggle -->
+        <label class="toggle-switch">
+            <input type="checkbox" id="alertToggle">
+            <span class="slider"></span>
+        </label>
+        <p class="toggle-label">Enable Temperature Alerts</p>
+
+        <!-- Temperature Graph -->
+        <canvas id="tempChart"></canvas>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/temperature.js') }}"></script>
+</body>
+</html>
